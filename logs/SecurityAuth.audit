@@ -1,0 +1,5 @@
+2020-03-05 14:11:43,291 INFO SecurityLogger.org.apache.hadoop.hbase.Server: Connection from 127.0.0.1:52109, version=2.2.3, sasl=false, ugi=adam (auth:SIMPLE), service=RegionServerStatusService
+2020-03-05 14:11:47,074 INFO SecurityLogger.org.apache.hadoop.hbase.Server: Connection from 127.0.0.1:39198, version=2.2.3, sasl=false, ugi=adam (auth:SIMPLE), service=AdminService
+2020-03-05 14:11:52,541 INFO SecurityLogger.org.apache.hadoop.hbase.Server: Connection from 127.0.0.1:39210, version=2.2.3, sasl=false, ugi=adam (auth:SIMPLE), service=ClientService
+2020-03-05 14:12:28,247 INFO SecurityLogger.org.apache.hadoop.hbase.Server: Connection from 127.0.0.1:58508, version=2.2.3, sasl=false, ugi=adam (auth:SIMPLE), service=MasterService
+2020-03-05 14:16:52,707 INFO SecurityLogger.org.apache.hadoop.hbase.Server: Connection from 127.0.0.1:39406, version=2.2.3, sasl=false, ugi=adam (auth:SIMPLE), service=ClientService
