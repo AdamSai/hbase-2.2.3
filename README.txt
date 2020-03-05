@@ -1,34 +1,32 @@
-Apache HBase [1] is an open-source, distributed, versioned, column-oriented
-store modeled after Google' Bigtable: A Distributed Storage System for
-Structured Data by Chang et al.[2]  Just as Bigtable leverages the distributed
-data storage provided by the Google File System, HBase provides Bigtable-like
-capabilities on top of Apache Hadoop [3].
+# Setup
 
-To get started using HBase, the full documentation for this release can be
-found under the doc/ directory that accompanies this README.  Using a browser,
-open the docs/index.html to view the project home page (or browse to [1]).
-The hbase 'book' at http://hbase.apache.org/book.html has a 'quick start'
-section and is where you should being your exploration of the hbase project.
+I din .bashrc eller .zshrc (Findes i din home folder /home/{username} fil tilføj de følgende linjer. Husk at ændr så de paths passer til dit system. På Mac burde man kunne bruge `/usr/libexec/java_home` for at finde java filen, og på Ubuntu burde den ligge i /usr/libe/jvm/:  
+```
+# HBASE PATH
+export HBASE_HOME=/home/adam/hbase-2.2.3
+export PATH=$PATH:$HBASE_HOME/bin
+export CLASSPATH=$CLASSPATH:/home/adam/hbase-2.3.3/lib/*
+#JAVA PATH
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export PATH=$PATH:$JAVA_HOME/BIN
+```  
+I /conf/hbase-env.sh ændr linjen `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre` så den passer til dit system.  
+I /conf/hbase-site.xml ændr følgende linjer så de passer til hvor du har downloadet dette repo:  
+```
+<property>
 
-The latest HBase can be downloaded from an Apache Mirror [4].
+  <name>hbase.rootdir</name>
 
-The source code can be found at [5]
+  <value>file:/home/adam/hbase-2.2.3</value>
 
-The HBase issue tracker is at [6]
+</property>
 
-Apache HBase is made available under the Apache License, version 2.0 [7]
+<property>
 
-The HBase mailing lists and archives are listed here [8].
+  <name>hbase.zookeeper.property.dataDir</name>
 
-The HBase distribution includes cryptographic software. See the export control
-notice here [9].
+  <value>/home/adam/hbase-2.2.3/zookeeper</value>
 
-1. http://hbase.apache.org
-2. http://research.google.com/archive/bigtable.html
-3. http://hadoop.apache.org
-4. http://www.apache.org/dyn/closer.cgi/hbase/
-5. https://hbase.apache.org/source-repository.html
-6. https://hbase.apache.org/issue-tracking.html
-7. http://hbase.apache.org/license.html
-8. http://hbase.apache.org/mail-lists.html
-9. https://hbase.apache.org/export_control.html
+</property>
+```  
+Derefter `cd` ind i /bin/ mappen og der burde du kunne skrive `start-hbase.sh` i din terminal. Til sidst burde du kunne skrive `hbase shell` i konsollen for at åbne shell terminalen.
