@@ -12,7 +12,7 @@ export PATH=$PATH:$JAVA_HOME/BIN
 ```  
 I /conf/hbase-env.sh ændr linjen `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre` så den passer til dit system.  
 I /conf/hbase-site.xml ændr følgende linjer så de passer til hvor du har downloadet dette repo:  
-```
+```xml
 <property>
 
   <name>hbase.rootdir</name>
